@@ -13,3 +13,12 @@ If you're in a network, you should know the nieghbors.
 If your nieghbor logs onto your machine, you should see the connection.
 
 
+## Version 0.1
+Really, just started with a working copy of conky from a different project.  
+Now I am just tweaking it to see if I can get 
+what I want out of it. 
+
+* It does report the nieghbors around me. 
+* If someone connects to my machine, I see the connection. 
+* Colors sort of working, not yet everywhere.
+
