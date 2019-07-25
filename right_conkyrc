@@ -57,6 +57,12 @@ conky.config = {
 	color6 = 'yellow',
 	color7 = '#ff471a',
 	color8 = 'red',
+	color9 = 'black',
+	color10= 'black',
+
+	color11 = 'white',
+	color12 = 'yellow',
+	color13 = 'red',
 
 	if_up_strictness = 'address',
 
@@ -85,9 +91,12 @@ ${color1}${hr 1}
 ${color4}CPU: ${color1}${hwmon 0 temp 1}°F ${alignr}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq}
 #${color1}${cpubar 8,300}:${color5}$cpu%
 
-${color2}CORE1: ${color1}${cpubar cpu1 10,} ${color1}${cpu cpu1}% $alignr${cpu cpu2}% ${color1}${cpubar cpu2 10,}${color2} :CORE2
-${color2}CORE3: ${color1}${cpubar cpu3 10,} ${color1}${cpu cpu3}% $alignr${cpu cpu4}% ${color1}${cpubar cpu4 10,}${color2} :CORE4
-#${color1}${hr 1}
+# Cores individually displayed
+#
+#${color2}CORE1: ${color8}${cpubar cpu1 10,} ${color1}${cpu cpu1}% $alignr${cpu cpu2}% ${color1}${cpubar cpu2 10,}${color2} #:CORE2
+#${color2}CORE3: ${color1}${cpubar cpu3 10,} ${color1}${cpu cpu3}% $alignr${cpu cpu4}% ${color1}${cpubar cpu4 10,}${color2} #:CORE4
+##${color1}${hr 1}
+${execpi 1  ~/.conky/bin/colorcpus.py}
 
 ${color4}PROCESS NAME${alignr}PID	CPU%	MEM%
 ${color7}${top name 1}$alignr${top pid 1}	${top cpu 1}	${top mem 1}
