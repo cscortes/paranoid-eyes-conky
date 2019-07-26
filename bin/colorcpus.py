@@ -1,14 +1,16 @@
 #!/home/cscortes/.local/share/virtualenvs/.conky-dlbkzSpR/bin/python
 
-# previously, we had this code:
-# ${color2}CORE1: ${colorcpu1}${cpubar cpu1 10,} ${color1}${cpu cpu1}% $alignr${cpu cpu2}% ${color1}${cpubar cpu2 10,}${color2} :CORE2
-# ${color2}CORE3: ${color1}${cpubar cpu3 10,} ${color1}${cpu cpu3}% $alignr${cpu cpu4}% ${color1}${cpubar cpu4 10,}${color2} :CORE4
-
+import psutil
 idx = 0
-cpunum = 4
 
+# =====================================================================================
+# Calculate number of CPUs
+cpunum = psutil.cpu_count()
 print("${alignc}${color2}CORES: %d" % cpunum)
 
+# =====================================================================================
+# create template strings for Left and Right CPU bars
+#
 LEFT_TEMPLATE = """${color2}CORE#IDX#:\
 ${if_match ${cpu cpu#IDX#} < 50} ${color1}\
 ${else}${if_match ${cpu cpu#IDX#} < 80} ${color6}${else} ${color8}${endif}${endif}\
@@ -18,6 +20,9 @@ RIGHT_TEMPLATE = """${alignr}${cpu cpu#IDX#}% ${if_match ${cpu cpu#IDX#} < 50}${
 ${else}${if_match ${cpu cpu#IDX#} < 80}${color6}${else}${color8}${endif}${endif}\
 ${cpubar cpu#IDX# 10,}${color2} :CORE#IDX#"""
 
+# =====================================================================================
+# generate outputs for left and right CPUs bar
+#
 while idx < cpunum:
 	idx += 1
 	if (idx <= cpunum):
