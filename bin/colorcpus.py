@@ -7,15 +7,14 @@
 idx = 0
 cpunum = 4
 
-print("${color2}CORES: %d" % cpunum);
-# print("${color2}CORE1: ${color8}${cpubar cpu1 10,} ${color1}${cpu cpu1}% $alignr${cpu cpu2}% ${color1}${cpubar cpu2 10,}${color2} :CORE2")
+print("${alignc}${color2}CORES: %d" % cpunum)
 
 LEFT_TEMPLATE = """${color2}CORE#IDX#:\
-${if_match ${cpu cpu#IDX#} < 30} ${color1}\
+${if_match ${cpu cpu#IDX#} < 50} ${color1}\
 ${else}${if_match ${cpu cpu#IDX#} < 80} ${color6}${else} ${color8}${endif}${endif}\
 ${cpubar cpu#IDX# 10,} ${color1}${cpu cpu#IDX#}%  """
 
-RIGHT_TEMPLATE = """${alignr}${cpu cpu#IDX#}% ${if_match ${cpu cpu#IDX#} < 30}${color1}\
+RIGHT_TEMPLATE = """${alignr}${cpu cpu#IDX#}% ${if_match ${cpu cpu#IDX#} < 50}${color1}\
 ${else}${if_match ${cpu cpu#IDX#} < 80}${color6}${else}${color8}${endif}${endif}\
 ${cpubar cpu#IDX# 10,}${color2} :CORE#IDX#"""
 

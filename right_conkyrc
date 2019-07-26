@@ -33,7 +33,7 @@ conky.config = {
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar',
 
 	alignment = 'top_left',
-	gap_x = 1510,
+	gap_x = 1490,
 	gap_y = 40,
 	minimum_width = 300,
 	minimum_height = 600,
@@ -77,7 +77,10 @@ ${color4}TODAY: ${color6}${time %H}:${time %M} ${time %A} ${alignr}${color1}${ti
 #
 
 ${color2}${if_match ${battery_percent BAT0} < 30}BATTERY:${alignr}${color1}${battery_percent BAT0}% ${color8}${battery_bar BAT0}${else}BATTERY:${alignr}${color1}${battery_percent BAT0}% ${color1}${battery_bar BAT0}${endif}
-${color2}${if_match ${cpu CPU0} < 90}CPU:${alignr}${color1}${cpu CPU0}% ${color1}${cpubar CPU0}${else}CPU:${alignr}${color1}${cpu CPU0}% ${color8}${cpubar CPU0}${endif}
+${color2}CPU: ${color1}${alignr}${cpu CPU0}% \
+${if_match ${cpu cpu0} < 50}${color1}\
+${else}${if_match ${cpu cpu0} < 80}${color6}${else}${color8}${endif}${endif}\
+${cpubar CPU0}
 ${color2}${if_match ${memperc} > 90}MEM:${alignr}${color1}${memperc}% ${color8}${membar}${else}MEM:${alignr}${color1}${memperc}% ${color1}${membar}${endif}${color1}
 ${color2}HD IO: ${alignr}${color1}${diskio} ${diskiograph 10,100,color1, color8 }
 ${hr 1}
@@ -90,7 +93,6 @@ ${color1}${hr 1}
 # CPU
 ${color4}CPU: ${color1}${hwmon 0 temp 1}°F ${alignr}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq}
 #${color1}${cpubar 8,300}:${color5}$cpu%
-
 # Cores individually displayed
 #
 #${color2}CORE1: ${color8}${cpubar cpu1 10,} ${color1}${cpu cpu1}% $alignr${cpu cpu2}% ${color1}${cpubar cpu2 10,}${color2} #:CORE2
@@ -98,13 +100,9 @@ ${color4}CPU: ${color1}${hwmon 0 temp 1}°F ${alignr}${execi 1000 cat /proc/cpui
 ##${color1}${hr 1}
 ${execpi 1  ~/.conky/bin/colorcpus.py}
 
-${color4}PROCESS NAME${alignr}PID	CPU%	MEM%
-${color7}${top name 1}$alignr${top pid 1}	${top cpu 1}	${top mem 1}
-${color7}${top name 2}$alignr${top pid 2}	${top cpu 2}	${top mem 2}
-${color6}${top name 3}$alignr${top pid 3}	${top cpu 3}	${top mem 3}
-${color6}${top name 4}$alignr${top pid 4}	${top cpu 4}	${top mem 4}
-${color1}${top name 5}$alignr${top pid 5}	${top cpu 5}	${top mem 5}
-${color1}${top name 6}$alignr${top pid 6}	${top cpu 6}	${top mem 6}
+# ================================================================================ 
+# List of Processes display Top CPU 
+${execpi 2  ~/.conky/bin/processes.py}
 ${color1}${hr 1}
 # ================================================================================ 
 ${color4}MEMORY:
