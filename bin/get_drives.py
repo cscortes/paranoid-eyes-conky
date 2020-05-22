@@ -1,4 +1,5 @@
-#!/home/cscortes/.local/share/virtualenvs/.conky-dlbkzSpR/bin/python
+#!/usr/bin/env python
+
 import  subprocess
 
 # ==========================================================================================

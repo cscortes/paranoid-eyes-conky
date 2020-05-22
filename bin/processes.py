@@ -1,4 +1,5 @@
-#!/home/cscortes/.local/share/virtualenvs/.conky-dlbkzSpR/bin/python
+#!/usr/bin/env python
+
 import psutil
 import time
 
@@ -14,12 +15,12 @@ sorted_pinfo = sorted(process_info, reverse=True, key=lambda a: (a['cpu_percent'
 
 # =================================================================================================
 # print header information
-print("${color4}CPU% MEM%   PID PROCESS NAME")
+print("${color4}  PID     CPU% MEM%  PROCESS NAME")
 
 # =================================================================================================
 # each proc formatting, create a COLOR property, based on 0,50,80 for each process
 #
-TEMPLATE='''{p[COLOR]}{p[cpu_percent]:6.2f} {p[memory_percent]:6.2f} {p[pid]:7d} {p[name]}'''
+TEMPLATE='''{p[COLOR]}{p[pid]:05d}    {p[cpu_percent]:03.0f}     {p[memory_percent]:03.0f}      {p[name]}'''
 
 for aprocess in sorted_pinfo[:6]:
 	aprocess["COLOR"] = "${color1}"

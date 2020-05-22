@@ -4,11 +4,14 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pep8="*"
+rope = "*"
 
 [packages]
 python-networkmanager = "*"
-scapy = "*"
+# scapy = "*"
 psutil = "*"
+dbus-python = "==1.2.8"
 
 [requires]
 python_version = "3.7"
