@@ -62,11 +62,11 @@ conky.config = {
 };
 
 conky.text = [[
-#
-${color1}${hr 4}
+# ----------------------------------------------------------------------------------
+# 
 ${color2}HOST: ${color6}$nodename ${alignr}${color1}$uptime_short ${color2}:UPTIME
 #
-${color1}${hr 1}
+
 # every 2.5 minutes, update
 ${execpi 150  ~/.conky/bin/netinfo.py}
 # 
