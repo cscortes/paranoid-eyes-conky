@@ -1,0 +1,115 @@
+conky.config = {
+--========================================================================
+
+	update_interval = 4,
+	total_run_times = 0,
+
+-- added next 3
+	cpu_avg_samples = 10,
+	net_avg_samples = 10,
+	temperature_unit = 'fahrenheit',
+
+	imlib_cache_size = 0,
+	double_buffer = true,
+	no_buffers = true,
+
+	format_human_readable = true,
+
+-- Text settings 
+
+	use_xft = true,
+	font = 'caviar dreams:size=10',
+	xftalpha = 0.5,
+	uppercase = false,
+
+	override_utf8_locale = true,
+	text_buffer_size = 2048,
+
+-- Window settings
+
+	own_window = true,
+	own_window_argb_visual = true,
+	own_window_argb_value = 225,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar',
+
+	alignment = 'top_left',
+	gap_x = 1140,
+	gap_y = 60,
+	minimum_width = 340,
+	minimum_height = 600,
+	maximum_width = 440,
+
+
+	default_bar_width = 100,
+	default_bar_height = 10,
+
+-- Graphics settings 
+
+	draw_shades = false,
+	default_color = '#ffffff',
+
+	color0 = 'blue',
+	color1 = 'white',
+	color2 = 'lightgreen',
+	color4 = '#facade',
+	color4 = 'orange',
+	color5 = '#3884AC',
+	color6 = 'yellow',
+	color7 = '#ff471a',
+	color8 = 'red',
+	color9 = 'black',
+
+	if_up_strictness = 'address',
+
+};
+
+conky.text = [[
+# ================================================================================ 
+# DASHBOARD
+${color1}${hr 4}
+#${color4}HOST: ${color1}$nodename ${alignr}${color1}$uptime_short :${color4}UPTIME
+${color4}TODAY: ${color6}${time %H}:${time %M} ${time %A} ${alignr}${color1}${time %b} ${time %e} ${time %Y} :${color4}DATE
+#
+
+${color2}${if_match ${battery_percent BAT0} < 30}BATTERY:${alignr}${color1}${battery_percent BAT0}% ${color8}${battery_bar BAT0}${else}BATTERY:${alignr}${color1}${battery_percent BAT0}% ${color1}${battery_bar BAT0}${endif}
+${color2}CPU: ${color1}${alignr}${cpu CPU0}% \
+${if_match ${cpu cpu0} < 50}${color1}\
+${else}${if_match ${cpu cpu0} < 80}${color6}${else}${color8}${endif}${endif}\
+${cpubar CPU0}
+${color2}${if_match ${memperc} > 90}MEM:${alignr}${color1}${memperc}% ${color8}${membar}${else}MEM:${alignr}${color1}${memperc}% ${color1}${membar}${endif}${color1}
+${color2}HD IO: ${alignr}${color1}${diskio} ${diskiograph 10,100,color1, color8 }
+${hr 1}
+# ================================================================================ 
+# CPU
+${color4}BATTERY:${alignr}${color1}${battery BAT0}
+${color2}TIME LEFT:${alignr}${color1}${battery_time BAT0}
+${color1}${hr 1}
+# ================================================================================ 
+# CPU
+${color4}CPU: ${color1}${hwmon 0 temp 1}°F ${alignr}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq}
+#${color1}${cpubar 8,300}:${color5}$cpu%
+# Cores individually displayed
+#
+#${color2}CORE1: ${color8}${cpubar cpu1 10,} ${color1}${cpu cpu1}% $alignr${cpu cpu2}% ${color1}${cpubar cpu2 10,}${color2} #:CORE2
+#${color2}CORE3: ${color1}${cpubar cpu3 10,} ${color1}${cpu cpu3}% $alignr${cpu cpu4}% ${color1}${cpubar cpu4 10,}${color2} #:CORE4
+##${color1}${hr 1}
+${execpi 1  ~/.conky/bin/colorcpus.py}
+
+# ================================================================================ 
+# List of Processes display Top CPU 
+${execpi 2  ~/.conky/bin/processes.py}
+${color1}${hr 1}
+# ================================================================================ 
+${color4}MEMORY:
+${color2}RAM: ${alignr}${color1} $mem / $memmax ${membar 10,100} 
+${color2}SWP: ${alignr}${color1} $swap / $swapmax ${swapbar 10,100} 
+${color1}${hr 1}
+# ================================================================================ 
+${color4}HDD IO: 
+${color2}Read: ${color1}${diskio_read}/s  ${alignr}Write: ${diskio_write}/s
+${color1}${diskiograph_read 8,100} ${alignr}${diskiograph_write 8,100}
+
+# Hard Drive Info:
+${execpi 30  ~/.conky/bin/get_drives.py}
+${color1}${hr 4}
+]];
