@@ -18,7 +18,6 @@ conky.config = {
 
 	use_xft = true,
 	font = 'DejaVu Sans Mono:size=9',
-	-- font = 'Roboto Mono:size=9',
 	xftalpha = 0.25,
 	uppercase = false,
 
