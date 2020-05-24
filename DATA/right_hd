@@ -18,7 +18,7 @@ conky.config = {
 -- Text settings 
 
 	use_xft = true,
-	font = 'caviar dreams:size=10',
+	font = 'DejaVu Sans Mono:size=9',
 	xftalpha = 0.5,
 	uppercase = false,
 
@@ -34,11 +34,11 @@ conky.config = {
 
 	alignment = 'top_left',
 	gap_x = 1240,
-	gap_y = 500,
+	gap_y = 540,
 	minimum_width = 340,
-	minimum_height = 90,
-	maximum_width = 440,
-
+	maximum_width = 340,
+	minimum_height = 220,
+	maximum_height = 220,
 
 	default_bar_width = 100,
 	default_bar_height = 10,
