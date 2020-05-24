@@ -4,8 +4,8 @@ import subprocess as sp
 # -------------------------------------------------------------------------------------------------
 # Access Point Scans:
 # sample data:
-# :Cortes 2Ghz:Infra:7:270 Mbit/s:100:▂▄▆█:WPA1 WPA2
-# *:Cortes 5Ghz:Infra:149:405 Mbit/s:72:▂▄▆_:WPA1 WPA2
+# :ATT 2Ghz:Infra:7:270 Mbit/s:100:▂▄▆█:WPA1 WPA2
+# *:ATT 5Ghz:Infra:149:405 Mbit/s:72:▂▄▆_:WPA1 WPA2
 #
 cmd = "nmcli -t device  wifi list"
 accessPoints = sp.check_output(cmd, shell=True).decode()

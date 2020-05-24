@@ -4,7 +4,7 @@ import subprocess as sp
 # -------------------------------------------------------------------------------------------------
 # Device Connection Mappings
 # sample data:
-# wlp3s0:wifi:connected:Auto Cortes 5Ghz
+# wlp3s0:wifi:connected:ATT 5Ghz
 # p2p-dev-wlp3s0:wifi-p2p:disconnected:
 # enp2s0:ethernet:unavailable:
 # lo:loopback:unmanaged:
