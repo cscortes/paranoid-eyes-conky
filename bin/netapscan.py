@@ -22,6 +22,8 @@ for line in accessPoints.split("\n"):
 
     if len(data) > 5:
         line = "${color1}"
+        if "*" in data[0]:
+            line = "${color0}"
         line += "{1:<15} {3:>3}".format(*data)
         line += "${alignr}"
         line += "{4:>10} {5:>3}".format(*data)
