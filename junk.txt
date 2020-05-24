@@ -1,0 +1,109 @@
+WIFI-HW  WIFI     WWAN-HW  WWAN     
+enabled  enabled  enabled  disabled 
+IN-USE  SSID         MODE   CHAN  RATE        SIGNAL  BARS  SECURITY  
+        Cortes 2Ghz  Infra  7     270 Mbit/s  99      ▂▄▆█  WPA1 WPA2 
+*       Cortes 5Ghz  Infra  149   405 Mbit/s  84      ▂▄▆█  WPA1 WPA2 
+NAME                            UUID                                  TYPE      DEVICE 
+Auto Cortes 5Ghz                0637a6bd-0e1d-4aac-b8c8-448d2ec4b749  wifi      wlp3s0 
+Auto 9E8A7B                     55c5ef6d-32ec-4be4-b015-0aa2c88fec40  wifi      --     
+Auto ATT6Xr2qTI                 2ef1ef8d-cf8a-4005-a4f3-14be0327a413  wifi      --     
+Auto ATT83IjKmS                 b49e67f8-68e0-457f-806b-9811e38b2814  wifi      --     
+Auto Bwplusbiltmore             3555aa9d-be6f-4a7d-a867-ee08d87a09df  wifi      --     
+Auto Caminos                    2d163ec4-4673-404c-ae76-eff18bb91fe0  wifi      --     
+Auto CHURCHS1538                02523951-29eb-4ae6-a8c0-cdf1be5c139a  wifi      --     
+Auto Cortes 2Ghz                b7cb08ca-4a3b-4fad-bccb-f76b0a090dfb  wifi      --     
+Auto CWN                        95924308-940d-4942-8cd5-c7ec97365bc5  wifi      --     
+Auto CWN                        70c8e01c-e9a5-4edb-85f6-5ea311a478ed  wifi      --     
+Auto CWN                        9dff75e6-6a22-4bc8-898a-9b9aa4af7fa7  wifi      --     
+Auto DG-Customer                41ab2c00-33e9-42f8-a383-fe3340eb249a  wifi      --     
+Auto digitalelpaso              2e3dfddf-6821-44c4-b508-265368203966  wifi      --     
+Auto Ellipsis Jetpack 585A      bfa8af6f-39c7-4bae-a7bc-04bab33b079b  wifi      --     
+Auto Free Airport WIFI          eada6b02-a96f-4479-a001-79ae3790082f  wifi      --     
+Auto J2                         825ade60-4635-4e26-9c65-eb54df5a94de  wifi      --     
+Auto Jesus Chapel Sanctuary     324d618e-9097-4976-a94c-670c2b3eb842  wifi      --     
+Auto Keflauta                   d8b826dc-3a94-419a-9498-34a640dec557  wifi      --     
+Auto LIGHTBEARER                1f614434-7ef4-48da-a45e-ce114a8b6802  wifi      --     
+Auto Lobo Guest                 e826ca20-dd1d-4461-b69c-3b14e214407e  wifi      --     
+Auto McDonalds Free WiFi        a97372d3-1681-46e1-bc37-b1729a25faa8  wifi      --     
+Auto Moto5                      98a86c1b-5acb-4e6b-b9bc-b636596ad925  wifi      --     
+Auto moto e5                    af75d666-b7ea-4854-b022-b21c0e16bfcd  wifi      --     
+Auto National 9                 51a4f37d-41f4-4c3c-b4ba-04d706ddd923  wifi      --     
+Auto NETGEAR98                  eeac04a8-b052-4315-bebc-916c43ebc3c7  wifi      --     
+Auto NETGEAR98                  6358addc-e508-4dd8-b0f6-b3de51c21cd3  wifi      --     
+Auto NETGEAR98-5G               d0f59251-89bf-420a-846f-fafb2129373d  wifi      --     
+Auto New CCC                    7996184f-1f39-4462-9e40-d69a5c05da4b  wifi      --     
+Auto ontiveros_jamie@yahoo.com  a43b71d5-0aac-4f5a-9812-f26b9d002f2f  wifi      --     
+Auto PPP Guest                  a7fc39b6-129c-4e74-8515-052583d38b58  wifi      --     
+Auto PWF1002_7940               34112b7e-a48a-4564-b768-63c342fa0c70  wifi      --     
+Auto RevivalNow                 3195b320-0b60-4138-a4d9-3b6350b90f57  wifi      --     
+Auto slcpl_public               991bc0be-4d52-4c45-bca0-3cbf92d7595d  wifi      --     
+Auto Speedy                     79394e6c-57ea-47ed-9815-1fc53a790821  wifi      --     
+Auto Subway460                  80198b5d-48c2-4472-a727-d9683c2b3da2  wifi      --     
+Auto TBML_public                41ad4acf-50a6-467b-839e-223c5684d287  wifi      --     
+Auto WhopperWifi                02b4a153-53e9-41de-abdb-b8c2cd1fc17c  wifi      --     
+Auto WHOPPERWIFI                e26eb3c2-dbfe-4eb6-bbb7-ce93a394a0d9  wifi      --     
+OpenVPN                         086b0ac0-5579-48e2-9a89-b48503064e03  vpn       --     
+Wi-Fi connection 1              a7998037-ee37-4409-9314-c069ac692fd6  wifi      --     
+Wired connection 1              3fc7d78b-6aec-35e8-84b7-62ba03f15038  ethernet  --     
+GENERAL.DEVICE:                         enp2s0
+GENERAL.TYPE:                           ethernet
+GENERAL.HWADDR:                         38:D5:47:4B:23:54
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          20 (unavailable)
+GENERAL.CONNECTION:                     --
+GENERAL.CON-PATH:                       --
+WIRED-PROPERTIES.CARRIER:               off
+GENERAL.DEVICE:                         wlp3s0
+GENERAL.TYPE:                           wifi
+GENERAL.HWADDR:                         7C:B0:C2:B7:24:0B
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          100 (connected)
+GENERAL.CONNECTION:                     Auto Cortes 5Ghz
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveConnection/1
+IP4.ADDRESS[1]:                         192.168.88.252/24
+IP4.GATEWAY:                            192.168.88.1
+IP4.ROUTE[1]:                           dst = 0.0.0.0/0, nh = 192.168.88.1, mt = 600
+IP4.ROUTE[2]:                           dst = 192.168.88.0/24, nh = 0.0.0.0, mt = 600
+IP4.DNS[1]:                             192.168.88.1
+IP4.DNS[2]:                             4.2.2.4
+IP4.DNS[3]:                             8.8.8.8
+IP6.ADDRESS[1]:                         fe80::208a:dc84:e7ec:1737/64
+IP6.GATEWAY:                            --
+IP6.ROUTE[1]:                           dst = fe80::/64, nh = ::, mt = 600
+IP6.ROUTE[2]:                           dst = ff00::/8, nh = ::, mt = 256, table=255
+DEVICE          TYPE      STATE         CONNECTION       
+wlp3s0          wifi      connected     Auto Cortes 5Ghz 
+p2p-dev-wlp3s0  wifi-p2p  disconnected  --               
+enp2s0          ethernet  unavailable   --               
+lo              loopback  unmanaged     --               
+wlp3s0: connected to Auto Cortes 5Ghz
+	"Intel 7265"
+	wifi (iwlwifi), 7C:B0:C2:B7:24:0B, hw, mtu 1500
+	ip4 default
+	inet4 192.168.88.252/24
+	route4 0.0.0.0/0
+	route4 192.168.88.0/24
+	inet6 fe80::208a:dc84:e7ec:1737/64
+	route6 fe80::/64
+	route6 ff00::/8
+
+p2p-dev-wlp3s0: disconnected
+	"p2p-dev-wlp3s0"
+	wifi-p2p, hw
+
+enp2s0: unavailable
+	"Realtek RTL8111/8168/8411"
+	ethernet (r8169), 38:D5:47:4B:23:54, hw, mtu 1500
+
+lo: unmanaged
+	"lo"
+	loopback (unknown), 00:00:00:00:00:00, sw, mtu 65536
+
+DNS configuration:
+	servers: 192.168.88.1 4.2.2.4 8.8.8.8
+	interface: wlp3s0
+
+Use "nmcli device show" to get complete information about known devices and
+"nmcli connection show" to get an overview on active connection profiles.
+
+Consult nmcli(1) and nmcli-examples(7) manual pages for complete usage details.
