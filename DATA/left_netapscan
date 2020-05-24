@@ -37,6 +37,7 @@ conky.config = {
 	gap_y = 390,
 	minimum_width = 322,
 	minimum_height = 160,
+	maximum_height = 160,
 	maximum_width = 450,
 
 
@@ -66,3 +67,4 @@ conky.text = [[
 # 
 ${execpi 30  ~/.conky/bin/netapscan.py}
 ]];
+

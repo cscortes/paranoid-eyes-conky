@@ -10,21 +10,22 @@ import subprocess as sp
 cmd = "nmcli -t device  wifi list"
 accessPoints = sp.check_output(cmd, shell=True).decode()
 
-print("${color4}ACCESS POINT")
+aps = accessPoints.split("\n")
+print("${color4}ACCESS POINT (%d)" % (len(aps),))
 title =  "${color6}" 
-title += "{0:<15} {1:<3}".format("NAME"," CH")
+title += "{0:<26} {1:<3}".format("NAME"," CH")
 title += "${alignr}" 
 title += "{0:>10} {1:>3}".format("RATE","QL")
 print(title)
 
-for line in accessPoints.split("\n"):
+for line in aps[:10]:
     data = line.split(":")
 
     if len(data) > 5:
         line = "${color1}"
         if "*" in data[0]:
             line = "${color0}"
-        line += "{1:<15} {3:>3}".format(*data)
+        line += "{1:<26.26} {3:>3}".format(*data)
         line += "${alignr}"
         line += "{4:>10} {5:>3}".format(*data)
         print(line)

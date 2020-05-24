@@ -35,7 +35,7 @@ conky.config = {
 
 	alignment = 'top_left',
 	gap_x = 20,
-	gap_y = 570,
+	gap_y = 590,
 	minimum_width = 322,
 	minimum_height = 200,
 	maximum_width = 450,
@@ -77,3 +77,5 @@ ${tcp_portmon 1 32767 rhost 7} ${alignr} ${tcp_portmon 1 32767 lservice 7}
 ${tcp_portmon 1 32767 rhost 8} ${alignr} ${tcp_portmon 1 32767 lservice 8}
 ${tcp_portmon 1 32767 rhost 9} ${alignr} ${tcp_portmon 1 32767 lservice 9}
 ]];
+
+

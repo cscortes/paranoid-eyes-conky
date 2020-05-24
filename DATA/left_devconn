@@ -68,3 +68,4 @@ ${color2}HOST: ${color6}$nodename ${alignr}${color1}$uptime_short ${color2}:UPTI
 # every 2.5 minutes, update
 ${execpi 30  ~/.conky/bin/netconn.py}
 ]];
+
