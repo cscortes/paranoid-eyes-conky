@@ -18,7 +18,7 @@ conky.config = {
 -- Text settings 
 
 	use_xft = true,
-	font = 'caviar dreams:size=10',
+	font = 'DejaVu Sans Mono:size=9',
 	xftalpha = 0.5,
 	uppercase = false,
 
