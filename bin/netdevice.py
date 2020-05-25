@@ -45,7 +45,10 @@ for line in deviceInfo.split("\n"):
                 d.append(datum)
         elif [x for x in ("IP6.ADDRESS","IP6.GATEWAY")
         if x in datum[0]]:
-            d.append(datum)
+            word, addr = datum
+            hexparts = addr.split(":")
+            d.append((word + ".a", ":".join(hexparts[:4])))
+            d.append((word + ".b", ":".join(hexparts[4:])))
 
 for datum in d:
     mesg = "{0:<24}{1:>30}".format(datum[0].strip(),datum[1].strip())
