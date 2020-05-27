@@ -35,9 +35,7 @@ conky.config = {
 	gap_x = 20,
 	gap_y = 20,
 	minimum_width = 300,
-	minimum_height = 60,
 	maximum_width = 450,
-
 
 	default_bar_width = 100,
 	default_bar_height = 10,

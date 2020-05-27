@@ -33,3 +33,28 @@ while idx < cpunum:
 		print(RIGHT_TEMPLATE.replace("#IDX#","{:02}".format(idx)))
 	else:
 		print("")
+
+import json
+import subprocess as sp 
+
+cmd = "sensors -u"
+sensorinfo = sp.check_output(cmd, shell=True).decode()
+
+# for line in sensorinfo.split("\n"):
+# 	print("# " + line)
+
+import re
+coretempdata = re.findall("""Core\s(\d+).+?input:\s(\d+).+?crit:\s(\d+).+?alarm""",sensorinfo,flags=re.M | re.I | re.S)
+
+print("")
+for core in coretempdata:
+	tempcolor = "${color1}"
+	if int(core[1]) > (.70 * int(core[2])):
+		tempcolor = "${color6}"
+	if int(core[1]) > (.90 * int(core[2])):
+		tempcolor = "${color8}"
+
+	cpumsg = "${color1}" +"CPU {0:>2} TEMP: ".format(*core)
+	cpumsg = cpumsg + tempcolor  + "{1:>3}".format(*core) 
+	cpumsg = cpumsg + "/{2:>3} C".format(*core)
+	print(cpumsg)
