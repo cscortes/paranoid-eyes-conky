@@ -1,0 +1,21 @@
+conky.text = [[
+#@ minimum_width = 340,
+#@ minimum_height = 60,
+#@ maximum_width = 440,
+#@ gap_x = 1240,
+# ================================================================================ 
+# DASHBOARD
+# ${color1}${hr 4}
+#${color4}HOST: ${color1}$nodename ${alignr}${color1}$uptime_short :${color4}UPTIME
+${color4}TODAY: ${color6}${time %H}:${time %M} ${time %A} ${alignr}${color1}${time %b} ${time %e} ${time %Y} :${color4}DATE
+#
+
+${color2}${if_match ${battery_percent BAT0} < 30}BATTERY:${alignr}${color1}${battery_percent BAT0}% ${color8}${battery_bar BAT0}${else}BATTERY:${alignr}${color1}${battery_percent BAT0}% ${color1}${battery_bar BAT0}${endif}
+${color2}${if_match ${memperc} > 90}MEM:${alignr}${color1}${memperc}% ${color8}${membar}${else}MEM:${alignr}${color1}${memperc}% ${color1}${membar}${endif}${color1}
+${color2}CPU: ${color1}${alignr}${cpu CPU0}% \
+${if_match ${cpu cpu0} < 50}${color1}\
+${else}${if_match ${cpu cpu0} < 80}${color6}${else}${color8}${endif}${endif}\
+${cpubar CPU0}
+${color2}HD IO: ${alignr}${color1}${diskio} ${diskiograph 10,100,color1, color8 }
+#${hr 1}
+]];

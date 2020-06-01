@@ -1,0 +1,7 @@
+
+conky.text = [[
+#@ minimum_width = 322,
+#@ gap_y = 430,
+${execpi 30  ~/.conky/bin/netapscan.py}
+]];
+

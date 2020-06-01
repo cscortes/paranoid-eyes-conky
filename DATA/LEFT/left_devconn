@@ -1,0 +1,8 @@
+
+conky.text = [[
+#@ minimum_width = 322,
+#@ gap_y = 20,
+${color2}HOST: ${color6}$nodename ${alignr}${color1}$uptime_short ${color2}:UPTIME
+${execpi 30  ~/.conky/bin/netconn.py}
+]];
+

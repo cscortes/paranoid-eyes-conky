@@ -1,0 +1,11 @@
+
+conky.text = [[
+#@ gap_x = 1240,
+#@ gap_y = 190,
+#@ minimum_width = 340,
+#@ minimum_height = 30,
+#@ maximum_width = 440,
+${color4}MEMORY:
+${color2}RAM: ${alignr}${color1} $mem / $memmax ${membar 10,100} 
+${color2}SWP: ${alignr}${color1} $swap / $swapmax ${swapbar 10,100} 
+]];

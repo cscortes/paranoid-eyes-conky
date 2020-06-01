@@ -1,6 +1,5 @@
 conky.config = {
 --========================================================================
-
 	update_interval = 4,
 	total_run_times = 0,
 
@@ -19,7 +18,7 @@ conky.config = {
 
 	use_xft = true,
 	font = 'DejaVu Sans Mono:size=9',
-	xftalpha = 0.5,
+	xftalpha = 0.25,
 	uppercase = false,
 
 	override_utf8_locale = true,
@@ -33,11 +32,10 @@ conky.config = {
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar',
 
 	alignment = 'top_left',
-	gap_x = 1240,
-	gap_y = 260,
-	minimum_width  = 340,
-	maximum_width  = 340,
-
+	gap_x = 20,
+	gap_y = 20,
+	minimum_width = 300,
+	maximum_width = 450,
 
 	default_bar_width = 100,
 	default_bar_height = 10,
@@ -47,7 +45,7 @@ conky.config = {
 	draw_shades = false,
 	default_color = '#ffffff',
 
-	color0 = 'blue',
+	color0 = 'lightblue',
 	color1 = 'white',
 	color2 = 'lightgreen',
 	color4 = '#facade',
@@ -56,23 +54,7 @@ conky.config = {
 	color6 = 'yellow',
 	color7 = '#ff471a',
 	color8 = 'red',
-	color9 = 'black',
 
 	if_up_strictness = 'address',
-
 };
 
-conky.text = [[
-# ================================================================================ 
-# CPU
-${color4}CPU:${color1} ${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq}
-#${color1}${cpubar 8,300}:${color5}$cpu%
-# Cores individually displayed
-#
-
-${execpi 1  ~/.conky/bin/colorcpus.py}
-
-# ================================================================================ 
-# List of Processes display Top CPU 
-${execpi 2  ~/.conky/bin/processes.py}
-]];

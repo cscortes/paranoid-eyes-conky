@@ -1,0 +1,12 @@
+
+conky.text = [[
+# ================================================================================ 
+# BATTERY
+#@ gap_x = 1240,
+#@ gap_y = 140,
+#@ minimum_width = 340,
+#@ maximum_width = 440,
+${color4}BATTERY:${alignr}${color1}${battery BAT0}
+${color2}TIME LEFT:${alignr}${color1}${battery_time BAT0}
+#${color1}${hr 1}
+]];

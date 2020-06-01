@@ -34,9 +34,10 @@ conky.config = {
 
 	alignment = 'top_left',
 	gap_x = 1240,
-	gap_y = 540,
+	gap_y = 140,
 	minimum_width = 340,
-	maximum_width = 340,
+	maximum_width = 440,
+
 
 	default_bar_width = 100,
 	default_bar_height = 10,
@@ -60,13 +61,3 @@ conky.config = {
 	if_up_strictness = 'address',
 
 };
-
-conky.text = [[
-# ================================================================================ 
-${color4}HDD IO: 
-${color2}Read: ${color1}${diskio_read}/s  ${alignr}Write: ${diskio_write}/s
-${color1}${diskiograph_read 8,100} ${alignr}${diskiograph_write 8,100}
-
-# Hard Drive Info:
-${execpi 30  ~/.conky/bin/get_drives.py}
-]];

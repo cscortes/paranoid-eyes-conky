@@ -1,0 +1,14 @@
+
+conky.text = [[
+# ================================================================================ 
+#@ gap_x = 1240,
+#@ gap_y = 540,
+#@ minimum_width = 340,
+#@ maximum_width = 340,
+${color4}HDD IO: 
+${color2}Read: ${color1}${diskio_read}/s  ${alignr}Write: ${diskio_write}/s
+${color1}${diskiograph_read 8,100} ${alignr}${diskiograph_write 8,100}
+
+# Hard Drive Info:
+${execpi 30  ~/.conky/bin/get_drives.py}
+]];

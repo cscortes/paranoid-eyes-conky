@@ -18,7 +18,7 @@ conky.config = {
 -- Text settings 
 
 	use_xft = true,
-	font = 'caviar dreams:size=10',
+	font = 'DejaVu Sans Mono:size=9',
 	xftalpha = 0.5,
 	uppercase = false,
 
@@ -33,9 +33,10 @@ conky.config = {
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar',
 
 	alignment = 'top_left',
-	gap_x = 1140,
-	gap_y = 60,
+	gap_x = 1240,
+	gap_y = 190,
 	minimum_width = 340,
+	minimum_height = 30,
 	maximum_width = 440,
 
 
@@ -61,4 +62,3 @@ conky.config = {
 	if_up_strictness = 'address',
 
 };
-

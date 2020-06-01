@@ -1,0 +1,20 @@
+
+conky.text = [[
+# ================================================================================ 
+# CPU
+#@ gap_x = 1240,
+#@ gap_y = 260,
+#@ minimum_width  = 340,
+#@ maximum_width  = 340,
+${color4}CPU:${color1} ${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq}
+#${color1}${cpubar 8,300}:${color5}$cpu%
+# Cores individually displayed
+#
+
+${execpi 1  ~/.conky/bin/colorcpus.py}
+
+# ================================================================================ 
+# List of Processes display Top CPU 
+${execpi 2  ~/.conky/bin/processes.py}
+]];
+

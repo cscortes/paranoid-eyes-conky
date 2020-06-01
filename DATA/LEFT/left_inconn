@@ -1,0 +1,20 @@
+
+conky.text = [[
+#@ minimum_width = 322,
+#@ gap_y = 630,
+# Print incoming connections to my system
+${color4}INCOMING CONNECTION
+${color6}Inbound Connection (${tcp_portmon 1 32767 count}) ${alignr} Local Service/Port$color
+${tcp_portmon 1 32767 rhost 0} ${alignr} ${tcp_portmon 1 32767 lservice 0}
+${tcp_portmon 1 32767 rhost 1} ${alignr} ${tcp_portmon 1 32767 lservice 1}
+${tcp_portmon 1 32767 rhost 2} ${alignr} ${tcp_portmon 1 32767 lservice 2}
+${tcp_portmon 1 32767 rhost 3} ${alignr} ${tcp_portmon 1 32767 lservice 3}
+${tcp_portmon 1 32767 rhost 4} ${alignr} ${tcp_portmon 1 32767 lservice 4}
+${tcp_portmon 1 32767 rhost 5} ${alignr} ${tcp_portmon 1 32767 lservice 5}
+${tcp_portmon 1 32767 rhost 6} ${alignr} ${tcp_portmon 1 32767 lservice 6}
+${tcp_portmon 1 32767 rhost 7} ${alignr} ${tcp_portmon 1 32767 lservice 7}
+${tcp_portmon 1 32767 rhost 8} ${alignr} ${tcp_portmon 1 32767 lservice 8}
+${tcp_portmon 1 32767 rhost 9} ${alignr} ${tcp_portmon 1 32767 lservice 9}
+]];
+
+
