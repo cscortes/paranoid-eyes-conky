@@ -104,3 +104,12 @@ venv.bak/
 # mypy
 .mypy_cache/
 junk.txt
+DATA/left_devconn
+DATA/left_inconn
+DATA/left_netapscan
+DATA/left_netdev
+DATA/right_battery
+DATA/right_cpu
+DATA/right_hd
+DATA/right_memory
+DATA/right_summary
