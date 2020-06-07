@@ -6,8 +6,10 @@ import subprocess as sp
 # sample data:
 # :ATT 2Ghz:Infra:7:270 Mbit/s:100:▂▄▆█:WPA1 WPA2
 # *:ATT 5Ghz:Infra:149:405 Mbit/s:72:▂▄▆_:WPA1 WPA2
-#
-cmd = "nmcli -t device  wifi list"
+# IN-USE,BSSID,SSID,MODE,CHAN,RATE,SIGNAL,BARS,SECURITY 
+
+fields = "IN-USE,SSID,CHAN,RATE,SIGNAL,BSSID"
+cmd = "nmcli -t -f {} device wifi list".format(fields)
 accessPoints = sp.check_output(cmd, shell=True).decode()
 
 aps = accessPoints.split("\n")
@@ -18,16 +20,24 @@ title += "${alignr}"
 title += "{0:>10} {1:>3}".format("RATE","QL")
 print(title)
 
-for line in aps[:10]:
-    data = line.split(":")
+linecount = 0
+for line in aps:
+    data = line.split(":", 5)
+    if data[1].strip() == '':
+        continue
+    
+    linecount +=1 
+
+    if linecount > 10: 
+        break
 
     if len(data) > 5:
         line = "${color1}"
         if "*" in data[0]:
             line = "${color0}"
-        line += "{1:<26.26} {3:>3}".format(*data)
+        line += "{1:<26.26} {2:>3}".format(*data)
         line += "${alignr}"
-        line += "{4:>10} {5:>3}".format(*data)
+        line += "{3:>10} {4:>3}".format(*data)
         print(line)
 
 # else:

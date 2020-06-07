@@ -8,11 +8,9 @@ pep8="*"
 rope = "*"
 
 [packages]
-# python-networkmanager = "*"
-# scapy = "*"
-# dbus-python = "==1.2.8"
 psutil = "*"
 python-nmcli = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"
+
